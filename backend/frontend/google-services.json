@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "128074197709",
+    "firebase_url": "https://dbank-aacdf.firebaseio.com",
+    "project_id": "dbank-aacdf",
+    "storage_bucket": "dbank-aacdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128074197709:android:96161ca359758172ca9784",
+        "android_client_info": {
+          "package_name": "com.example.dbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128074197709-nlin1soav7o1rs7rob4q7shc3ujjadls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf-MvzBkmvdyxB-jp6XMCTROLppCULAxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128074197709-nlin1soav7o1rs7rob4q7shc3ujjadls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="google-signin-clientid" content="316381720235-qgavrq6prd440ain04oj0vsgtl0em9t7.apps.googleusercontent.com" />
+    <meta name="google-signin-cookiepolicy" content="single_host_origin" />
+    <meta name="google-signin-callback" content="signinCallback" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+
+      <!-- The top of file index.html -->
+      <html itemscope itemtype="http://schema.org/Article">
+      <head>
+        <!-- BEGIN Pre-requisites -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+        <!-- END Pre-requisites -->
+
+        <script>
+          function start() {
+            gapi.load('auth2', function() {
+              auth2 = gapi.auth2.init({
+                client_id: '34578869425-rvu9f0qrbp5urjghv9nv7aispbm6ejjs.apps.googleusercontent.com',
+                // Scopes to request in addition to 'profile' and 'email'
+                //scope: 'additional_scope'
+              });
+            });
+          }
+        </script>
+      
+  </script>
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://apis.google.com/js/client.js"></script>
+    <title>QG App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      function signInCallback(authResult) {
+        if (authResult['code']) {
+      
+          // Hide the sign-in button now that the user is authorized, for example:
+          $('#signinButton').attr('style', 'display: none');
+      
+          // Send the code to the server
+          $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080',
+            // Always include an `X-Requested-With` header in every AJAX request,
+            // to protect against CSRF attacks.
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest'
+            },
+            contentType: 'application/octet-stream; charset=utf-8',
+            success: function(result) {
+              // Handle or verify the server response.
+            },
+            processData: false,
+            data: authResult['code']
+          });
+        } else {
+          // There was an error.
+        }
+      }
+      </script>
+      
+  </body>
+</html>
